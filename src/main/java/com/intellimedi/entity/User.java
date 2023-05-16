@@ -34,11 +34,12 @@ public class User {
     String phone;
     @Column
     Gender gender;
-    @OneToMany(targetEntity = HealthParameters.class,cascade = CascadeType.ALL)
+    //TODO - use cache to get only latest details ..
+    @OneToMany(targetEntity = HealthParameters.class,cascade = CascadeType.REMOVE,fetch=FetchType.LAZY)
     @JoinColumn(name = "userId_fk",referencedColumnName = "Id")
     private List<HealthParameters> healthParametersList;
 
-    @OneToMany(targetEntity = HealthParameters.class,cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = DoctorVisit.class,cascade = CascadeType.REMOVE,fetch=FetchType.LAZY)
     @JoinColumn(name = "userId_fk",referencedColumnName = "Id")
     private List<DoctorVisit> doctorVisitList;
 

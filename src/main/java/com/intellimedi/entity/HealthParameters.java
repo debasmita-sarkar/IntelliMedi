@@ -17,7 +17,6 @@ public class HealthParameters {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     BigInteger id;
-   //TODO discuss if here user is required
     @ManyToOne
     User user;
     @Column

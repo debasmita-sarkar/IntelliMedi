@@ -20,8 +20,6 @@ public class PrescribedMedicine {
     BigInteger id;
     @OneToOne
     Medicine medicine;
-    @ManyToOne
-    Prescription prescription;
     @Column
     String purpose;
     @Column
@@ -38,5 +36,10 @@ public class PrescribedMedicine {
     LocalDate endDate;
     @OneToMany
     List<ConsumptionTime> consumptionTimes;
+    @ManyToOne
+    Prescription prescription;
+    // add view for user
+    @Transient
+    User user;
 }
 

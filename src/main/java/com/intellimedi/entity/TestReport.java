@@ -26,7 +26,7 @@ public class TestReport {
     LocalDate reportDate;
     @ManyToOne
     Prescription prescription;
-    //TODO - understand how to use map and do
+    //TODO - understand how to use map and try view
     //@Column
     //Map<Metric,Double> metrics;
 }
